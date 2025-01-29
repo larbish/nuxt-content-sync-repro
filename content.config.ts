@@ -5,8 +5,8 @@ export default defineContentConfig({
     pages_de: defineCollection({
       type: 'page',
       source: {
-        include: 'de/pages/**',
-        prefix: 'de',
+        include: 'de/pages/**.md',
+        prefix: '/de',
       },
       schema: z.object({
         navigation: z.union([
@@ -19,7 +19,7 @@ export default defineContentConfig({
     pages_en: defineCollection({
       type: 'page',
       source: {
-        include: 'en/pages/**',
+        include: '/en/pages/**.md',
         prefix: 'en',
       },
       schema: z.object({

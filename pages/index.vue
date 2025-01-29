@@ -1,5 +1,8 @@
+<script setup lang="ts">
+const { locale } = storeToRefs(useLocaleStore());
+await navigateTo(locale.value);
+</script>
 
 <template>
-  <NuxtLink to="/de">Zur deutschen Seite</NuxtLink>
-  <NuxtLink to="/en">To english version</NuxtLink>
+  Loading, though no user should really ever see this because of SSR.
 </template>
