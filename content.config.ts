@@ -19,8 +19,8 @@ export default defineContentConfig({
     pages_en: defineCollection({
       type: 'page',
       source: {
-        include: '/en/pages/**.md',
-        prefix: 'en',
+        include: 'en/pages/**.md',
+        prefix: '/en',
       },
       schema: z.object({
         navigation: z.union([
