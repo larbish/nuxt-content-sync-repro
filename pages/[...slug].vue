@@ -20,8 +20,8 @@ useSeoMeta(page.value.seo);
 </script>
 
 <template>
-  <NuxtLinkLocale v-if="locale === 'en'" :to="switchLocalePath('de')">DE</NuxtLinkLocale>
-  <NuxtLinkLocale v-if="locale === 'de'" :to="switchLocalePath('en')">EN</NuxtLinkLocale>
+  <NuxtLink v-if="locale === 'en'" :to="switchLocalePath('de')">DE</NuxtLink>
+  <NuxtLink v-if="locale === 'de'" :to="switchLocalePath('en')">EN</NuxtLink>
 
   <div v-if="page">
     <ContentRenderer :value="page" />
