@@ -16,17 +16,29 @@ export default defineNuxtConfig({
   },
 
   modules: [
-    '@pinia/nuxt',
+    '@nuxtjs/i18n',
     '@nuxt/content',
   ],
 
   content: {
-    studio: {
-      enabled: true,
-    },
-
     preview: {
       api: 'https://api.nuxt.studio',
     },
+  },
+
+  i18n: {
+    locales: [
+      { code: 'de', name: 'Deutsch', language: 'de' },
+      { code: 'en', name: 'English', language: 'en' },
+    ],
+    detectBrowserLanguage: {
+      useCookie: true,
+      cookieKey: 'user_agent_locale_preference',
+      redirectOn: 'root',
+    },
+    strategy: 'prefix',
+    defaultLocale: 'de',
+    baseUrl: '/',
+    vueI18n: '~/i18n.config.ts',
   },
 })
