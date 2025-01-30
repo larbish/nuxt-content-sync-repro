@@ -2,7 +2,8 @@
 import type { Collections } from '@nuxt/content'
 
 const route = useRoute()
-const { locale, setLocale } = useI18n()
+const { locale } = useI18n()
+const switchLocalePath = useSwitchLocalePath();
 
 const { data: page } = await useAsyncData(route.path, async () => {
   const collection = ('pages_' + locale.value) as keyof Collections
@@ -19,9 +20,8 @@ useSeoMeta(page.value.seo);
 </script>
 
 <template>
-  <button v-if="locale === 'de'" @click="setLocale('en')">Switch to EN</button>
-
-  <button v-if="locale === 'en'" @click="setLocale('de')">Switch to DE</button>
+  <NuxtLinkLocale v-if="locale === 'en'" :to="switchLocalePath('de')">DE</NuxtLinkLocale>
+  <NuxtLinkLocale v-if="locale === 'de'" :to="switchLocalePath('en')">EN</NuxtLinkLocale>
 
   <div v-if="page">
     <ContentRenderer :value="page" />
