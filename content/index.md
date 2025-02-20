@@ -1,4 +1,4 @@
-::section
+::page-section
   - First element
   - Second element
   - Third element
