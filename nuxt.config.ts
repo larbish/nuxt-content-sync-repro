@@ -5,8 +5,7 @@ export default defineNuxtConfig({
   devtools: { enabled: true },
 
   routeRules: {
-    '/en': { prerender: true },
-    '/de': { prerender: true },
+    '/': { prerender: true },
   },
 
   nitro: {
@@ -16,7 +15,6 @@ export default defineNuxtConfig({
   },
 
   modules: [
-    '@nuxtjs/i18n',
     '@nuxt/content',
   ],
 
@@ -24,21 +22,5 @@ export default defineNuxtConfig({
     preview: {
       api: 'https://api.nuxt.studio',
     },
-  },
-
-  i18n: {
-    locales: [
-      { code: 'de', name: 'Deutsch', language: 'de' },
-      { code: 'en', name: 'English', language: 'en' },
-    ],
-    detectBrowserLanguage: {
-      useCookie: true,
-      cookieKey: 'user_agent_locale_preference',
-      redirectOn: 'root',
-    },
-    strategy: 'prefix',
-    defaultLocale: 'de',
-    baseUrl: '/',
-    vueI18n: '~/i18n.config.ts',
   },
 })

@@ -10,9 +10,7 @@
     "postinstall": "nuxt prepare"
   },
   "dependencies": {
-    "@nuxt/content": "https://pkg.pr.new/@nuxt/content@e0e0539",
-    "@nuxtjs/i18n": "^9.1.4",
-    "@vueuse/core": "^12.5.0",
+    "@nuxt/content": "^3.1.0",
     "nuxt": "^3.15.4",
     "vue": "latest",
     "vue-router": "latest"
