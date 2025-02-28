@@ -1,3 +1,7 @@
+---
+navigation: header
+---
+
 ::page-section
 #body
   - First element
